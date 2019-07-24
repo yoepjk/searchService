@@ -1,2 +1,0 @@
-# searchService
-search service
