@@ -8,10 +8,61 @@
  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
 </head>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btn_search').on("click", function() {
+			var query = $('#queryId').val();
+			var page = $('#pageId').val();
+			var size = $('#sizeId').val();
+			var url = "/home/search";
+
+			$.get(url, {query: query, page: page, size: size},
+				function(data, status) {
+					// 뷰 보이게 동작
+					alert("Success : ");
+				}		
+			);
+		});
+	});
+</script>
+
+
 <body>
- <div class="container">
-  <h2>Hi <span th:utext="${userName}"></span>, this is the home page.</h2>
-  <a th:href="@{/logout}">Sign out</a>
+<div class="container">
+	<h2>Book Search</h2>
+<!-- <a th:href="@{/logout}">Sign out</a>  -->
+	
+	<div class="row">
+		<div class="col-md-8">
+			<div class="input-group">
+                <input type="text" class="form-control" id="queryId"
+                       placeholder="검색어" required autofocus>
+                       
+                <input type="text" class="form-control" id="pageId"
+                       placeholder="페이지"  required autofocus>
+	                       
+                <input type="text" class="form-control" id="sizeId"
+                       placeholder="표시 개수"  required autofocus>
+                                                                  
+            	<button id="btn_search" class="btn btn-primary">Search</button>           
+            </div>
+		</div>
+		
+		
+    </div>
+    
+		
+	
+	
+	
+	
+	
+	
+	<div id="searchList" >
+		
+	</div>	
+	
+
  </div>
 </body>
 </html>

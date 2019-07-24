@@ -1,0 +1,18 @@
+restTemplate:
+  factory:
+    readTimeout: 5000 
+    connectTimeout: 3000
+  httpClient:
+    maxConnTotal: 100
+    maxConnPerRoute: 5
+    
+booksearchapi:
+  header:
+    authorization: 289e2e2b52000081b601f96db4d5ec1d
+    
+    
+    
+    
+    
+    
+    
